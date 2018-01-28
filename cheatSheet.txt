@@ -1,0 +1,145 @@
+Common Vim Commands Reference
+This is a reference sheet of common Vim commands and other useful 
+points and resources. Remember! Vim is a tool that can be used in
+many different ways - as you work with it you'll find the ways
+it works best for you. If you need help on any command, Google it!
+
+
+NORMAL MODE - the default mode for entering commands
+    <ESC>   Enter normal mode 
+
+
+MOVING THE CURSOR
+General Movement
+       
+        ^
+        k
+    <h     l>
+        j
+        v
+
+Line Movement 
+    0       Move to the begining of a line
+    $       Move to the end of a line
+    e       Move to the next end of word
+    b       Move to the next begining of word.
+   
+Document Movement 
+    gg      Go to the top of the document
+    G       Go to the end of the document
+    #G      Go to line #
+    H       Go to top of current screen ("high")
+    M       Go to middle of current screen ("mid")
+    L       Go to bottom of current screen ("low")
+    CTRL-b  Move page up
+    CTRL-f  Move page down
+
+Searching
+    /p      Search for phrase p starting from the top
+    ?p      Search for phrase p starting from the bottom
+    n       Go to next search result
+    N       Go to previous result
+    %       Move to matching () or {} or []
+
+MODIFIERS
+Counts - put a number before a command to repeat it that many times.
+
+
+TEXT EDITING
+Insert
+    i       Insert text under cursor 
+    a       Append text after cursor 
+    I       Insert at start of line 
+    A       Append text after line 
+
+Replace
+    r       Replace char under cursor with the next char type
+    R       Replace chars under cursor until ESC is pressed. 
+
+Change 
+    cw      Delete a word, then insert (includes space)
+    c$      Delete to the end of the line and then insert
+
+Delete
+    x       Delete character under cursor
+    d       Delete selected characters
+    dw      Delete a word (includes space)
+    d$      Delete to the end of a line
+    dd      Delete a line (includes newline)
+
+Select
+    v       Start selecting text. Use hjkl to move.
+    y       Copy selected text.
+    yy      Copy the current line.
+
+Put
+    p       Put the last thing deleted/copied under the cursor
+    P       Put the last thing deleted/copied after the cursor
+
+Substitute
+    :s/old/new/g
+            replace old with new on the current line
+    :%s/old/new/g
+            replace old with new in the whole file
+    
+Undo
+    u       Undo the last command
+    U       Undo all the changes to a line
+    CTRL-r  Redo
+
+
+EXITING VIM
+    :w      Save
+    :wq     Save and exit    
+    :q      Exit
+    :q!     Exit without saving
+
+
+CUSTOMIZATION
+You can specify Vim customizations in the vimrc file. Other than 
+appearance changes, you can also re-map any commands. You can open
+this file from the command line on MacOS or Linux using:
+    vim ~/.vimrc
+Or on Windows:
+    C:\Users\username\_vimrc
+
+Some useful vimrc settings:
+    set number      show line numbers on the left of the screen 
+    syntax on       use syntax highlighting
+    set autoindent  automatically indent when syntactically appropriate
+    set shiftwidth=4
+                    use 4 spaces to auto indent
+    filetype plugin indent on
+                    use different indenting based on the file type 
+    set tabstop=4   makes existing tabs 4 spaces wide
+    set expandtab   makes new tabs use 4 spaces instead
+    set cursorline  highlight the current line
+    set ruler       display cursor position in lower right
+    mouse=a         use the mouse to move
+
+
+    
+COLORSCHEMES
+To install a new colorscheme, copy the colorscheme file into 
+the folder (you may have to make it) on MacOS or Linux: 
+    ~/.vim/colors/
+Or on Windows:
+    C:\Users\username\vimfiles
+
+Then add the following line to your vimrc:
+    colorscheme filename
+
+This is a useful website for finding Vim colorschemes:
+    http://vimcolors.com/
+
+OTHER TUTORIALs
+To read the built-in vim tutorial, type the following in the command
+prompt:
+    vimtutor
+
+This is another friendly introduction:
+    http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
+
+    
+
+
